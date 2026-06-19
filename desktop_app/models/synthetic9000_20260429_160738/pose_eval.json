@@ -1,0 +1,72 @@
+{
+  "val": {
+    "mean_joint_error_cm": 19.297458231449127,
+    "median_joint_error_cm": 15.347373485565186,
+    "pck_10cm": 0.2513037037037037,
+    "pck_15cm": 0.48543703703703706,
+    "bone_length_error_cm": 4.067212715744972
+  },
+  "test": {
+    "mean_joint_error_cm": 19.492357969284058,
+    "median_joint_error_cm": 15.403187274932861,
+    "pck_10cm": 0.24882962962962962,
+    "pck_15cm": 0.4829777777777778,
+    "bone_length_error_cm": 4.097384959459305
+  },
+  "history": [
+    {
+      "epoch": 1.0,
+      "loss": 0.010313639932490409,
+      "mean_joint_error_cm": 37.05383539199829,
+      "median_joint_error_cm": 31.536057591438293,
+      "pck_10cm": 0.05768888888888889,
+      "pck_15cm": 0.14202222222222222,
+      "bone_length_error_cm": 6.754862517118454
+    },
+    {
+      "epoch": 3.0,
+      "loss": 0.0006525855476750022,
+      "mean_joint_error_cm": 22.91865199804306,
+      "median_joint_error_cm": 17.279556393623352,
+      "pck_10cm": 0.21954074074074073,
+      "pck_15cm": 0.42277037037037035,
+      "bone_length_error_cm": 5.074449256062508
+    },
+    {
+      "epoch": 6.0,
+      "loss": 0.0005284299903073685,
+      "mean_joint_error_cm": 20.361381769180298,
+      "median_joint_error_cm": 15.791505575180054,
+      "pck_10cm": 0.2561333333333333,
+      "pck_15cm": 0.47,
+      "bone_length_error_cm": 4.625159129500389
+    },
+    {
+      "epoch": 9.0,
+      "loss": 0.0004786208288699507,
+      "mean_joint_error_cm": 19.703201949596405,
+      "median_joint_error_cm": 15.64008891582489,
+      "pck_10cm": 0.24885925925925925,
+      "pck_15cm": 0.4745111111111111,
+      "bone_length_error_cm": 4.224081337451935
+    },
+    {
+      "epoch": 12.0,
+      "loss": 0.0004536860193338919,
+      "mean_joint_error_cm": 18.144306540489197,
+      "median_joint_error_cm": 13.627156615257263,
+      "pck_10cm": 0.32815555555555553,
+      "pck_15cm": 0.5537185185185185,
+      "bone_length_error_cm": 4.128653183579445
+    },
+    {
+      "epoch": 14.0,
+      "loss": 0.00044153686464229165,
+      "mean_joint_error_cm": 19.297458231449127,
+      "median_joint_error_cm": 15.347373485565186,
+      "pck_10cm": 0.2513037037037037,
+      "pck_15cm": 0.48543703703703706,
+      "bone_length_error_cm": 4.067212715744972
+    }
+  ]
+}

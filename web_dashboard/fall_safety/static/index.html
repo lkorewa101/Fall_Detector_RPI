@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 낙상 감지 플랫폼</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="logo-section">
+                <i class="fa-solid fa-radar logo-icon"></i>
+                <h1>AI 낙상 감지 플랫폼</h1>
+                <span class="status-badge stopped">중지됨</span>
+            </div>
+            <div class="header-controls">
+                <div class="time-display">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>가동시간: 0시간 0분</span>
+                </div>
+                <button class="btn-primary" id="startBtn">
+                    <i class="fa-solid fa-play"></i> 시작
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <button class="nav-btn active" data-tab="dashboard">
+                <i class="fa-solid fa-chart-line"></i> 대시보드
+            </button>
+            <button class="nav-btn" data-tab="tracking">
+                <i class="fa-solid fa-user-group"></i> 인원 추적
+            </button>
+            <button class="nav-btn" data-tab="alerts">
+                <i class="fa-regular fa-bell"></i> 알림
+            </button>
+            <button class="nav-btn" data-tab="system">
+                <i class="fa-solid fa-gear"></i> 시스템
+            </button>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="tab-content active">
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="card stat-card">
+                        <div class="card-header">
+                            <h3>활성 인원</h3>
+                            <i class="fa-solid fa-user-group icon-blue"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="stat-value">0</div>
+                            <div class="stat-desc">최대 8명 추적 가능</div>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-header">
+                            <h3>오늘 알림</h3>
+                            <i class="fa-solid fa-triangle-exclamation icon-orange"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="stat-value">0</div>
+                            <div class="stat-desc">24시간 기준</div>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-header">
+                            <h3>레이더 상태</h3>
+                            <i class="fa-solid fa-radar icon-green"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="stat-value status-text">Disconnected</div>
+                            <div class="stat-desc">IWR6843ISK</div>
+                        </div>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="card-header">
+                            <h3>AI 모델</h3>
+                            <i class="fa-solid fa-brain icon-purple"></i>
+                        </div>
+                        <div class="card-body">
+                            <div class="stat-value">Training</div>
+                            <div class="stat-desc">LSTM + Transformer</div>
+                        </div>
+                    </div>
+
+                    <!-- Large Panels -->
+                    <div class="card large-panel">
+                        <div class="card-header">
+                            <h3>실시간 인원 현황</h3>
+                            <p>현재 추적 중인 인원들의 상태</p>
+                        </div>
+                        <div class="card-body empty-state">
+                            <p>추적 중인 인원이 없습니다</p>
+                        </div>
+                    </div>
+                    <div class="card large-panel">
+                        <div class="card-header">
+                            <h3>최근 알림</h3>
+                            <p>최신 낙상 감지 및 시스템 알림</p>
+                        </div>
+                        <div class="card-body empty-state">
+                            <p>최근 알림이 없습니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracking Tab -->
+            <div id="tracking" class="tab-content">
+                <div class="card full-height-card">
+                    <div class="card-header">
+                        <h3>활성 인원 추적</h3>
+                        <p>현재 시스템에서 추적 중인 모든 인원의 상세 정보</p>
+                    </div>
+                    <div class="card-body centered-content">
+                        <div class="empty-placeholder">
+                            <i class="fa-solid fa-users-slash"></i>
+                            <h3>현재 추적 중인 인원이 없습니다</h3>
+                            <p>시스템을 시작하면 자동으로 인원을 감지합니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts Tab -->
+            <div id="alerts" class="tab-content">
+                <div class="card full-height-card">
+                    <div class="card-header">
+                        <h3>알림 히스토리</h3>
+                        <p>모든 낙상 감지 및 시스템 알림 기록</p>
+                    </div>
+                    <div class="card-body centered-content">
+                        <div class="empty-placeholder">
+                            <i class="fa-regular fa-bell-slash"></i>
+                            <h3>알림이 없습니다</h3>
+                            <p>낙상이 감지되면 여기에 표시됩니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Tab -->
+            <div id="system" class="tab-content">
+                <div class="system-grid">
+                    <div class="card system-info-card">
+                        <div class="card-header">
+                            <h3>시스템 정보</h3>
+                            <p>현재 시스템 상태 및 설정</p>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <label>시스템 상태</label>
+                                <div class="value stopped">중지됨</div>
+                            </div>
+                            <div class="info-item">
+                                <label>가동 시간</label>
+                                <div class="value">0시간 0분</div>
+                            </div>
+                            <div class="info-item">
+                                <label>레이더 상태</label>
+                                <div class="value">Disconnected</div>
+                            </div>
+                            <div class="info-item">
+                                <label>AI 모델</label>
+                                <div class="value">Training</div>
+                            </div>
+                            <div class="info-item full-width">
+                                <label>WebSocket 연결</label>
+                                <div class="value disconnected"><span class="dot"></span> 연결 해제됨</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card system-control-card">
+                        <div class="card-header">
+                            <h3>시스템 제어</h3>
+                            <p>시스템 시작/중지 및 설정</p>
+                        </div>
+                        <div class="control-actions">
+                            <div class="button-group">
+                                <button class="btn-primary full-width" id="sysStartBtn">
+                                    <i class="fa-solid fa-play"></i> 시스템 시작
+                                </button>
+                                <button class="btn-danger full-width" id="sysStopBtn">
+                                    <i class="fa-regular fa-square"></i> 시스템 중지
+                                </button>
+                            </div>
+                            <button class="btn-secondary full-width">
+                                <i class="fa-solid fa-download"></i> 알림 데이터 내보내기
+                            </button>
+                            <button class="btn-secondary full-width">
+                                <i class="fa-solid fa-gear"></i> 시스템 설정
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

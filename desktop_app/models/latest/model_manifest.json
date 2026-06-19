@@ -1,0 +1,103 @@
+{
+  "created_at": "2026-05-19T18:15:00",
+  "updated_at": "2026-05-19T21:35:00",
+  "active_dataset_policy": "Use curated mmWave datasets; do not use the older low-quality synthetic/user-created latest models.",
+  "training_sources": {
+    "fall_point_cloud_root": "<FALL_POINT_CLOUD_DATASET_ROOT>"
+  },
+  "backup_before_replacement": "models\\backup_20260519_180945_before_d_models",
+  "runtime_files": {
+    "fall_model": "models\\latest\\fall_model.pkl",
+    "pose_model": "models\\latest\\pose_model.pkl",
+    "fall_sequence_model": "models\\latest\\fall_sequence_model_d_fall.pkl"
+  },
+  "fall_model": {
+    "path": "models\\latest\\fall_model.pkl",
+    "runtime": "modules.ai_model.FallAI",
+    "model_type": "ExtraTreesClassifier",
+    "feature_count": 11,
+    "report": "reports\\d_fall_frame_model_eval.json",
+    "metrics": {
+      "frames": 2458,
+      "train_sources": 76,
+      "test_sources": 26,
+      "fall_frames": 1229,
+      "non_fall_frames": 1229,
+      "frame_accuracy": 0.7885532591414944,
+      "frame_balanced_accuracy": 0.7887473460721868,
+      "source_accuracy": 0.9230769230769231,
+      "source_balanced_accuracy": 0.9230769230769231,
+      "source_confusion_labels": [
+        "fall",
+        "non_fall"
+      ],
+      "source_confusion_matrix": [
+        [
+          11,
+          2
+        ],
+        [
+          0,
+          13
+        ]
+      ]
+    }
+  },
+  "fall_sequence_model": {
+    "path": "models\\latest\\fall_sequence_model_d_fall.pkl",
+    "runtime": "modules.ai_model.FallSequenceAI via modules.fall_detector.HybridFallDetector",
+    "model_type": "ExtraTreesClassifier",
+    "report": "reports\\d_fall_sequence_model_eval.json",
+    "metrics": {
+      "examples": 102,
+      "train_examples": 76,
+      "test_examples": 26,
+      "accuracy": 0.9230769230769231,
+      "balanced_accuracy": 0.9230769230769231,
+      "confusion_labels": [
+        "fall",
+        "non_fall"
+      ],
+      "confusion_matrix": [
+        [
+          12,
+          1
+        ],
+        [
+          1,
+          12
+        ]
+      ]
+    }
+  },
+  "pose_model": {
+    "path": "models\\latest\\pose_model.pkl",
+    "runtime": "modules.pose_estimator.PoseEstimator sklearn backend",
+    "model_type": "ExtraTreesRegressor",
+    "label_type": "geometry_pseudo_skeleton",
+    "report": "reports\\d_pose_pseudo_model_eval.json",
+    "notes": [
+      "Uses curated mmWave point clouds only.",
+      "Labels are deterministic geometry pseudo-skeletons, not external motion-capture ground truth.",
+      "Torch is not required for this runtime path."
+    ],
+    "metrics": {
+      "frames": 9110,
+      "train_sources": 119,
+      "test_sources": 40,
+      "mean_joint_error_m": 0.23769855499267578,
+      "median_joint_error_m": 0.1719806045293808,
+      "p95_joint_error_m": 0.6311058312654495,
+      "pck_10cm": 0.2355245683930943,
+      "pck_15cm": 0.424734395750332
+    }
+  },
+  "verification": {
+    "model_smoke": "tools\\smoke_model_load.py loaded fall_model.pkl, fall_sequence_model_d_fall.pkl, and pose_model.pkl; skeleton_shape=(28, 3)",
+    "compileall": "python -m compileall -q main.py modules tests tools",
+    "unittest": "python -m unittest discover -s tests -v; 34 tests OK",
+    "runtime_replay_80": "reports\\d_fall_detector_replay_eval_sequence_latched_runtime_ai_recheck.json; tp=47 tn=29 fp=0 fn=4; accuracy=0.95; fall_recall=0.9215686275",
+    "runtime_replay_120": "reports\\d_fall_detector_replay_eval_sequence_latched_runtime_ai_120.json; labelled tp=47 tn=51 fp=0 fn=4 unknown=18; labelled_accuracy=0.9607843137; fall_recall=0.9215686275",
+    "runtime_replay_168": "reports\\d_fall_detector_replay_eval_sequence_latched_runtime_ai_all168_final.json; labelled tp=47 tn=51 fp=0 fn=4 unknown=66; labelled_accuracy=0.9607843137; fall_recall=0.9215686275"
+  }
+}

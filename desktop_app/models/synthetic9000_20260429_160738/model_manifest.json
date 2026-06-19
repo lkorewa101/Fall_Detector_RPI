@@ -1,0 +1,267 @@
+{
+  "created_at": "2026-04-29T16:03:29",
+  "dataset": "<DATASET_ROOT>\\curated_9000_20260429_151044",
+  "output": "models\\synthetic9000_20260429_155409",
+  "latest_dir": "models\\latest",
+  "train_sessions": 7200,
+  "val_sessions": 900,
+  "test_sessions": 900,
+  "fall_examples": {
+    "train": 129600,
+    "val": 16200,
+    "test": 16200
+  },
+  "pose_examples": {
+    "train": 72000,
+    "val": 9000,
+    "test": 9000
+  },
+  "fall_model": {
+    "path": "models\\synthetic9000_20260429_155409\\fall_model.pkl",
+    "metrics": {
+      "classes": [
+        "fall_forward",
+        "fall_side",
+        "lying",
+        "sitting",
+        "slip",
+        "stand_up",
+        "standing",
+        "trip",
+        "walking"
+      ],
+      "val": {
+        "accuracy": 0.46370370370370373,
+        "balanced_accuracy": 0.46370370370370373,
+        "fall_precision": 0.8947280334728034,
+        "fall_recall": 0.7425,
+        "fall_f1": 0.8115370018975333,
+        "classification_report": {
+          "fall_forward": {
+            "precision": 0.38944365192582026,
+            "recall": 0.30333333333333334,
+            "f1-score": 0.34103685196752026,
+            "support": 1800.0
+          },
+          "fall_side": {
+            "precision": 0.4225705329153605,
+            "recall": 0.37444444444444447,
+            "f1-score": 0.3970544918998527,
+            "support": 1800.0
+          },
+          "lying": {
+            "precision": 0.5667924528301886,
+            "recall": 0.4172222222222222,
+            "f1-score": 0.48064,
+            "support": 1800.0
+          },
+          "sitting": {
+            "precision": 0.5518814139110604,
+            "recall": 0.5377777777777778,
+            "f1-score": 0.5447383230163195,
+            "support": 1800.0
+          },
+          "slip": {
+            "precision": 0.44458846403110824,
+            "recall": 0.3811111111111111,
+            "f1-score": 0.41040981154651507,
+            "support": 1800.0
+          },
+          "stand_up": {
+            "precision": 0.48902439024390243,
+            "recall": 0.44555555555555554,
+            "f1-score": 0.4662790697674419,
+            "support": 1800.0
+          },
+          "standing": {
+            "precision": 0.35568760611205436,
+            "recall": 0.6983333333333334,
+            "f1-score": 0.47131608548931386,
+            "support": 1800.0
+          },
+          "trip": {
+            "precision": 0.4013937282229965,
+            "recall": 0.32,
+            "f1-score": 0.35610510046367855,
+            "support": 1800.0
+          },
+          "walking": {
+            "precision": 0.6348884381338742,
+            "recall": 0.6955555555555556,
+            "f1-score": 0.6638388123011666,
+            "support": 1800.0
+          },
+          "accuracy": 0.46370370370370373,
+          "macro avg": {
+            "precision": 0.47291896425848506,
+            "recall": 0.46370370370370373,
+            "f1-score": 0.459046505161312,
+            "support": 16200.0
+          },
+          "weighted avg": {
+            "precision": 0.47291896425848506,
+            "recall": 0.46370370370370373,
+            "f1-score": 0.459046505161312,
+            "support": 16200.0
+          }
+        }
+      },
+      "test": {
+        "accuracy": 0.47012345679012346,
+        "balanced_accuracy": 0.4701234567901234,
+        "fall_precision": 0.8936776790206272,
+        "fall_recall": 0.7401388888888889,
+        "fall_f1": 0.8096938387905492,
+        "classification_report": {
+          "fall_forward": {
+            "precision": 0.3813148788927336,
+            "recall": 0.3061111111111111,
+            "f1-score": 0.3395993836671803,
+            "support": 1800.0
+          },
+          "fall_side": {
+            "precision": 0.4357506361323155,
+            "recall": 0.38055555555555554,
+            "f1-score": 0.4062870699881375,
+            "support": 1800.0
+          },
+          "lying": {
+            "precision": 0.5711159737417943,
+            "recall": 0.435,
+            "f1-score": 0.4938505203405866,
+            "support": 1800.0
+          },
+          "sitting": {
+            "precision": 0.5399343544857768,
+            "recall": 0.5483333333333333,
+            "f1-score": 0.5441014332965821,
+            "support": 1800.0
+          },
+          "slip": {
+            "precision": 0.4587212911235258,
+            "recall": 0.41055555555555556,
+            "f1-score": 0.4333040164174729,
+            "support": 1800.0
+          },
+          "stand_up": {
+            "precision": 0.48292029470864034,
+            "recall": 0.40055555555555555,
+            "f1-score": 0.4378985727300334,
+            "support": 1800.0
+          },
+          "standing": {
+            "precision": 0.3636622932116372,
+            "recall": 0.7083333333333334,
+            "f1-score": 0.4805880135695439,
+            "support": 1800.0
+          },
+          "trip": {
+            "precision": 0.3880149812734082,
+            "recall": 0.2877777777777778,
+            "f1-score": 0.3304625199362041,
+            "support": 1800.0
+          },
+          "walking": {
+            "precision": 0.6655223148602256,
+            "recall": 0.7538888888888889,
+            "f1-score": 0.7069549361812972,
+            "support": 1800.0
+          },
+          "accuracy": 0.47012345679012346,
+          "macro avg": {
+            "precision": 0.47632855760333964,
+            "recall": 0.4701234567901234,
+            "f1-score": 0.46367182956967096,
+            "support": 16200.0
+          },
+          "weighted avg": {
+            "precision": 0.4763285576033397,
+            "recall": 0.47012345679012346,
+            "f1-score": 0.4636718295696709,
+            "support": 16200.0
+          }
+        }
+      }
+    }
+  },
+  "pose_model": {
+    "path": "models\\synthetic9000_20260429_160738\\pose_model.pt",
+    "metrics": {
+      "val": {
+        "mean_joint_error_cm": 19.297458231449127,
+        "median_joint_error_cm": 15.347373485565186,
+        "pck_10cm": 0.2513037037037037,
+        "pck_15cm": 0.48543703703703706,
+        "bone_length_error_cm": 4.067212715744972
+      },
+      "test": {
+        "mean_joint_error_cm": 19.492357969284058,
+        "median_joint_error_cm": 15.403187274932861,
+        "pck_10cm": 0.24882962962962962,
+        "pck_15cm": 0.4829777777777778,
+        "bone_length_error_cm": 4.097384959459305
+      },
+      "history": [
+        {
+          "epoch": 1.0,
+          "loss": 0.010313639932490409,
+          "mean_joint_error_cm": 37.05383539199829,
+          "median_joint_error_cm": 31.536057591438293,
+          "pck_10cm": 0.05768888888888889,
+          "pck_15cm": 0.14202222222222222,
+          "bone_length_error_cm": 6.754862517118454
+        },
+        {
+          "epoch": 3.0,
+          "loss": 0.0006525855476750022,
+          "mean_joint_error_cm": 22.91865199804306,
+          "median_joint_error_cm": 17.279556393623352,
+          "pck_10cm": 0.21954074074074073,
+          "pck_15cm": 0.42277037037037035,
+          "bone_length_error_cm": 5.074449256062508
+        },
+        {
+          "epoch": 6.0,
+          "loss": 0.0005284299903073685,
+          "mean_joint_error_cm": 20.361381769180298,
+          "median_joint_error_cm": 15.791505575180054,
+          "pck_10cm": 0.2561333333333333,
+          "pck_15cm": 0.47,
+          "bone_length_error_cm": 4.625159129500389
+        },
+        {
+          "epoch": 9.0,
+          "loss": 0.0004786208288699507,
+          "mean_joint_error_cm": 19.703201949596405,
+          "median_joint_error_cm": 15.64008891582489,
+          "pck_10cm": 0.24885925925925925,
+          "pck_15cm": 0.4745111111111111,
+          "bone_length_error_cm": 4.224081337451935
+        },
+        {
+          "epoch": 12.0,
+          "loss": 0.0004536860193338919,
+          "mean_joint_error_cm": 18.144306540489197,
+          "median_joint_error_cm": 13.627156615257263,
+          "pck_10cm": 0.32815555555555553,
+          "pck_15cm": 0.5537185185185185,
+          "bone_length_error_cm": 4.128653183579445
+        },
+        {
+          "epoch": 14.0,
+          "loss": 0.00044153686464229165,
+          "mean_joint_error_cm": 19.297458231449127,
+          "median_joint_error_cm": 15.347373485565186,
+          "pck_10cm": 0.2513037037037037,
+          "pck_15cm": 0.48543703703703706,
+          "bone_length_error_cm": 4.067212715744972
+        }
+      ]
+    }
+  },
+  "latest_files": {
+    "fall_model": "models\\latest\\fall_model.pkl",
+    "pose_model": "models\\latest\\pose_model.pt"
+  },
+  "updated_at": "2026-04-29T16:15:09"
+}

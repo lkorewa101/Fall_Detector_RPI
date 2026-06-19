@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Fall Detector RPI
+Exec=sh -c 'cd "$(dirname "$1")" && exec sh ./RUN_ALL_APP_RPI.sh' sh %k
+Terminal=true
+StartupNotify=false
+Categories=Utility;
